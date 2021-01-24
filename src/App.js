@@ -10,7 +10,7 @@ function App() {
   return (
    <><Header />
    <Switch>
-     <Route path='/' component={States} ></Route>
+     <Route exact path='/' component={States} ></Route>
      <Route exact path='/Country' component={Country} ></Route>
      <Route path='/District/:state' component={District} ></Route>
    </Switch>
