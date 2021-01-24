@@ -38,7 +38,7 @@ const Country = () => {
     getGlobal();
 
     async function getCountries(){
-      const countries = await axios.get(`http://api.coronatracker.com/v3/stats/worldometer/country?countryCode=`);
+      const countries = await axios.get(`https://api.coronatracker.com/v3/stats/worldometer/country?countryCode=`);
       console.log(countries);
       setCountries([countries]);
     }
