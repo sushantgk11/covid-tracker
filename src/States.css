@@ -52,8 +52,9 @@ table
     border: none;
     border-collapse: collapse;
     margin: auto;
-    width: 80%;
+    /* width: 80%; */
     /* text-align: center; */
+    /* overflow-x: scroll; */
 }
 table tr:nth-child(even)
 {

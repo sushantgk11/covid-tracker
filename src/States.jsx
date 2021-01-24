@@ -99,6 +99,7 @@ const States = ({header, data}) => {
     </div>
   </div>
 </div>
+<div style={{overflowX:'scroll', width:'100%'}}>
   <table>
     <tr id="theader">
        <th colSpan="4"><span><input type="text" placeholder="Search State...." value={searchTerm} onChange={handleEvent} /></span></th> 
@@ -151,7 +152,7 @@ const States = ({header, data}) => {
       
     </tr></>)}))})}
     
-  </table>
+  </table></div>
    {/* <div className="paginate container">
       <TablePagination className="my-pagination" headers={ header }
             data={ data } perPageItemCount={ 5 }

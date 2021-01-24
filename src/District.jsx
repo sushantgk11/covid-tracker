@@ -108,6 +108,7 @@ return (<>
       </div>
     </div>
   </div>
+  <div style={{overflowX:'scroll', width:'100%'}}>
     <table>
       <tr id="theader">
          <th colspan="8"><span><input type="text" placeholder="Search District...." value={searchTerm} onChange={handleChange} /></span></th> 
@@ -172,7 +173,7 @@ return (<>
     
         
       
-    </table>
+    </table></div>
     <div class="paginate container">
       <pagination-controls class="my-pagination" ></pagination-controls>
        </div>

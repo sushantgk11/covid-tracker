@@ -92,6 +92,7 @@ const Country = () => {
     </div>
   </div>
 </div>
+<div style={{overflowX:'scroll', width:'100%'}}>
   <table>
     <tr id="theader">
        <th colSpan="8"><span><input type="text" placeholder="Search Country...." value={searchTerm} onChange={handleEvent}/></span> </th> 
@@ -148,7 +149,7 @@ const Country = () => {
     )
       })} 
     
-  </table>
+  </table></div>
    <div className="paginate container">
       <pagination-controls className="my-pagination" ></pagination-controls>
    </div>
