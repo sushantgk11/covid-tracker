@@ -1,0 +1,177 @@
+*
+{
+    margin: 0;
+    padding:0;
+    text-decoration: none;
+    list-style-type: none;
+    color:rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+}
+nav
+{
+    width: 100%;
+    height: 60px;
+    background-color:rgb(208, 220, 235);
+    line-height: 60px;
+    position: fixed;
+    z-index: 10;
+    
+}
+
+nav ul 
+{
+    float: right;
+    margin: 0 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+nav ul li
+{
+    display: inline-block;
+    padding: 0 20px 0 20px;
+}
+ #check
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    
+
+}
+#btn
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 20px;
+    line-height: 60px;
+    display:none ;
+    transition: 1s all;
+}
+#cancel
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 20px;
+    line-height: 60px;
+    display:none ;
+    transition: 1s all;
+}
+@media (max-width: 992px)
+{
+    nav ul 
+    {
+        /* display: none; */
+        float: none;
+        background-color: rgb(208, 220, 235);
+        margin: 0;
+        position: fixed;
+        left: -100%;
+        transition: 0.5s all;
+        width: 100%;
+        height: auto;
+        z-index: 55;
+
+    }
+    #btn
+   {
+        display: block;
+        
+    }
+    nav ul li 
+    {
+        display: block;
+        text-align: center;
+        border-bottom: 0.1px solid rgb(59, 59, 59);
+        position: relative;
+        
+    }
+    #check:checked ~ label #btn
+    {
+        display: none;
+        
+    }   
+    #check:checked ~ label #cancel
+    {
+        display: block;
+        
+    }
+    #check:checked ~ ul
+    {
+        left: 0;
+    }
+    nav .myskill
+    {
+        background-color: black;
+        position: absolute;
+        z-index: 5;
+        margin-left:50%;
+        /* overflow: auto; */
+        width: auto;
+        top: auto;
+        left: auto;
+    }
+}
+
+nav ul li
+{
+    position: relative;
+    margin:0;
+}
+nav ul li ul 
+{
+    margin: 0;
+    position: absolute;
+    left: 0;
+    background-color: black;
+    display: none;
+}
+nav ul .skill:hover .myskill
+{
+    display: block;
+}
+nav span
+{
+    font-size: 32px;
+}
+
+nav #covidImg
+{
+    margin-top: -15px;
+    animation-name: animatecovid;
+    animation-duration: 200s;
+    animation-iteration-count: infinite;
+    
+}
+@keyframes animatecovid
+{
+    from 
+    {
+        transform: rotate(0deg);
+        
+    }
+    to 
+    {
+        transform: rotate(36000deg) ;
+    }
+}
+nav #tracker
+{
+    transform: translateY(-12px);
+}
+nav #covid
+{
+    font-weight: bold;
+    color: rgb(187, 1, 1);
+}
+nav .covid_c
+{
+    font-size: 55px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

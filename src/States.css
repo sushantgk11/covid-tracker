@@ -1,0 +1,210 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+.container
+{
+    width:100% ;
+    margin:auto;
+}
+.container .row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    
+}
+.row .col-lg-3 section 
+{
+    width:98%;
+    min-height: 200px;
+    background-color: rgb(240, 240, 240);
+    /* margin-left: 10px; */
+    border-radius: 5PX;
+    
+}
+@media (max-width:768px)
+{
+    .row .col-lg-3 
+{
+    width: 90%;
+    min-height: 200px;
+    background-color: rgb(202, 201, 201);
+    /* margin-left: 10px; */
+    
+}
+}
+@media (max-width:592px)
+{
+    .row .col-lg-3 
+{
+    width: 70%;
+    min-height: 200px;
+    background-color: rgb(202, 201, 201);
+    /* margin-left: 10px; */
+    
+}
+}
+
+table
+{
+    border: none;
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+    /* text-align: center; */
+}
+table tr:nth-child(even)
+{
+    background-color: rgb(255, 254, 254);
+}
+table tr:nth-child(odd)
+{
+    background-color:rgb(206, 206, 206);
+}
+table tr th,td 
+{
+    border: 1px solid rgb(190, 190, 190);
+    padding: 9px;
+}
+table th    
+{
+    background-color: rgb(93, 134, 93);
+    font-size: 20px;
+    color: rgb(0, 0, 2);
+    font-weight: bold;
+}
+table tr td a
+{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+    font-weight: bold;
+}
+table tr td:nth-child(1) a
+{
+    text-decoration: none;
+    color: rgb(125, 125, 197);
+    font-weight: bold;
+    
+}
+table tr td:nth-child(1) a:hover
+{
+    color: rgb(37, 37, 82);   
+}
+table tr td:nth-child(3) a
+{
+    color: red;
+}
+table tr td:nth-child(7)
+{
+    color: white;
+   background-color: red;  
+   
+   
+}
+table tr td:nth-child(5) a
+{
+   color: green;
+}
+
+
+.container .row .sec1
+{
+    background-color: rgb(126, 19, 19);
+}
+.container .row .sec2
+{
+    background-color:rgb(56, 56, 110) ;
+}
+.container .row .sec3
+{
+    background-color: rgb(28, 92, 28);
+}
+.container .row .sec4
+{
+    background-color:rgb(109, 107, 107);
+}
+.container .row h3
+{
+    color: rgb(221, 221, 221);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container .row span
+{
+    font-size: 25px;
+    color: white;
+    transform: translateY(-20px);
+}
+.container .row section
+{
+    display: grid;
+    place-items: center;
+    line-height: -20px;
+}
+#heading
+{
+    display: grid;
+    place-items: center;
+}
+#heading h2
+{
+    color: rgb(238, 255, 0);
+    font-family: 'Poppins', sans-serif;
+}
+#heading p
+{
+    color: gray;
+    font-family: 'Poppins', sans-serif;
+}
+@media (max-width:768px)
+{
+    #heading h2
+    {
+        font-size: 5vw;
+    }
+}
+.main
+{
+    background-color: rgb(0, 0, 0);
+    transform: translateY(60px);
+}
+#theader th
+{
+    background-color: rgb(0, 0, 0);
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+#theader th input[type="text"]
+{
+   border: none;
+   padding-left: 20px;
+   border-radius: 2px;
+   outline: none;
+   transition: width 0.4s ease-in-out;
+   width: 250px;
+}
+#theader th input[type="text"]:focus
+{
+  width: 400px;
+  
+  /* border: 1px solid rgb(0, 108, 145); */
+  box-shadow: 1px 1px 8px rgb(21, 196, 255);
+}
+.my-pagination /deep/ .ngx-pagination .current {
+    background: rgb(250, 0, 0);
+    color: white;
+  }
+  .my-pagination ::ng-deep a { color: rgb(94, 255, 0) !important; }
+
+  .paginate
+  {
+    height: 100px;
+    display: grid;
+    place-items: center;
+  }
+
+
+  

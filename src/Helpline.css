@@ -1,0 +1,38 @@
+*
+{
+ margin: 0;
+ padding: 0;   
+}
+.main
+{
+    background-color: black;
+    display: grid;
+    place-items: center;
+}
+.main h2 
+{
+    color: red;
+}
+.main p
+{
+    color: rgb(175, 174, 174);
+}
+.main table
+{
+    border: 1px solid green;
+    color: rgb(202, 202, 202);
+    
+}
+.main table th
+{
+    border: 1px solid green;
+    color: rgb(252, 0, 0);
+    background-color: yellow;
+    padding-left: 10px;
+}
+.main table td
+{
+    border: 1px solid green;
+    color: rgb(202, 202, 202);
+    padding-left: 10px;
+}
