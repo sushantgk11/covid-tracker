@@ -25,7 +25,7 @@ const Country = () => {
 
   useEffect(()=>{
     async function getGlobal() {
-      const resp = await axios.get(`http://api.coronatracker.com/v3/stats/worldometer/global`);
+      const resp = await axios.get(`https://api.coronatracker.com/v3/stats/worldometer/global`);
       console.log(resp);
       setConfirm(resp.data.totalConfirmed);
       setActive(resp.data.totalActiveCases);
