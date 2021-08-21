@@ -9,7 +9,7 @@ import recover_img from './assets/recovered.png';
 import death_img from './assets/death.png';
 // import { TablePagination } from 'react-pagination-table';
 
-const States = ({header, data}) => {
+const States = () => {
       const [allStates, setStates] = useState([]);
       // const [totolConfirmed, setTotalConfirmed] = useState();
       const [searchTerm, setSearchTerm] = useState('');
@@ -21,15 +21,12 @@ const States = ({header, data}) => {
   useEffect(()=>{
     async function getStates(){
       const States = await axios.get(`https://api.covid19india.org/data.json`);
-      console.log(States);
+      console.log("Hi this is covid cases : - "+States);
       setStates([States]);
     }
     getStates();
   });
-
-
-
-
+ 
 
     return (
   <>  

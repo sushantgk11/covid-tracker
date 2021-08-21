@@ -5,6 +5,7 @@ import States from './States'
 import Header from './Header';
 import District from './District';
 import { Route, Switch } from 'react-router-dom';
+// import States2 from './States2';
 
 function App() {
   return (
