@@ -1,38 +1,35 @@
-import React, { useEffect, useState } from 'react';
-// import ReactDOM from 'react-dom';
-import axios from 'axios';
-import './States.css';
-import { Link } from 'react-router-dom';
-import confirm_img from './assets/microscope.png';
-import active_img from './assets/patient (1).png';
-import recover_img from './assets/recovered.png';
-import death_img from './assets/death.png';
-// import { TablePagination } from 'react-pagination-table';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./States.css";
+import { Link } from "react-router-dom";
+import confirm_img from "./assets/microscope.png";
+import active_img from "./assets/patient (1).png";
+import recover_img from "./assets/recovered.png";
+import death_img from "./assets/death.png";
+import states from "india-state-codes";
 
 const States = () => {
-      const [allStates, setStates] = useState([]);
-      // const [totolConfirmed, setTotalConfirmed] = useState();
-      const [searchTerm, setSearchTerm] = useState('');
+  const [allStates, setStates] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-      const handleEvent = (event) =>{
-        setSearchTerm(event.target.value);
-      }
+  const handleEvent = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-  useEffect(()=>{
-    async function getStates(){
-      const States = await axios.get(`https://api.covid19india.org/data.json`);
-      console.log("Hi this is covid cases : - "+States);
+  useEffect(() => {
+    async function getStates() {
+      const States = await axios.get(
+        `https://data.covid19india.org/v4/min/data.min.json`
+      );
       setStates([States]);
     }
     getStates();
   });
- 
 
-    return (
-  <>  
-  <div className="main">
-      
-  <div className="container">
+  return (
+    <>
+      <div className="main">
+        {/* <div className="container">
     <div className="row" id="heading">
       <h2>Total India Cases of COVID-19</h2>
       <p>[Updated on {allStates.map(function (val,indx){
@@ -95,68 +92,77 @@ const States = () => {
       </section>
     </div>
   </div>
-</div>
-<div style={{overflowX:'scroll', width:'100%'}}>
-  <table>
-    <tr id="theader">
-       <th colSpan="4"><span><input type="text" placeholder="Search State...." value={searchTerm} onChange={handleEvent} /></span></th> 
-       <th colSpan="4" id="Hint"> <span style={{color:'gray', fontSize:'16px'}}>Hint : Click on State name to get District-wise Data</span></th> 
-       
-    </tr> 
-    <tr>
-    <th>
-      States/UT
-    </th>
-    <th>
-      Confirmed-Cases
-    </th>
-    <th>
-      New-Cases
-    </th>
-    <th>
-      Active-Cases
-    </th>
-    <th>
-      Recovered
-    </th>
-    <th>
-      New-Recovered
-    </th>
-    <th>
-      Deaths
-    </th>
-    <th>
-      New-Deaths
-    </th>
-    
-    
-  </tr>
-    
-  
-    {allStates.map(function (val,indx){
-        return (val.data.statewise.map(function (mystate,indx2){
-          if(mystate.state.toLowerCase().includes(searchTerm.toLowerCase()))
-        return(<> 
-    <tr>
-      <td> <Link to={`/District/${mystate.state}`}> { mystate.state }</Link></td>
-      <td> <a href=""> {mystate.confirmed}</a></td>
-      <td id="newcase"> <a href=""> +{mystate.deltaconfirmed}</a></td>
-      <td> <a href=""> {mystate.active}</a></td>
-      <td> <a href=""> {mystate.recovered}</a></td>
-      <td id="newrecovered"> <a href=""> +{mystate.deltarecovered}</a></td>
-      <td> <a href=""> {mystate.deaths}</a></td>
-      <td id="newdeath"> <a href=""> +{mystate.deltadeaths}</a></td>
-      
-    </tr></>)}))})}
-    
-  </table></div>
-   {/* <div className="paginate container">
-      <TablePagination className="my-pagination" headers={ header }
-            data={ data } perPageItemCount={ 5 }
-         />
-   </div> */}
-</div>
-</>);
-}
+</div> */}
+        <div style={{ overflowX: "scroll", width: "100%" }}>
+          <table>
+            <tr id="theader">
+              {/* <th colSpan="4"><span><input type="text" placeholder="Search State...." value={searchTerm} onChange={handleEvent} /></span></th>  */}
+              <th colSpan="4" id="Hint">
+                {" "}
+                <span style={{ color: "gray", fontSize: "16px" }}>
+                  Hint : Click on State name to get District-wise Data
+                </span>
+              </th>
+            </tr>
+            <tr>
+              <th>States/UT</th>
+              <th>Confirmed-Cases</th>
+              <th>Recovered</th>
+              <th>Death</th>
+              <th>Tested</th>
+              <th>
+                Vaccinated 1<sup>st</sup> Dose
+              </th>
+              <th>
+                Vaccinated 2<sup>nd</sup> Dose
+              </th>
+            </tr>
 
-export default States; 
+            {allStates.map(function(val, indx) {
+              var stateNames = Object.keys(val.data);
+              return stateNames.map(function(val2, indx) {
+                return (
+                  <>
+                    <tr>
+                      <td>
+                        <Link to={`/District/${val2}`}>
+                          {states.getStateNameByStateCode(`...${val2}.=`)}
+                        </Link>
+                      </td>
+                      <td>
+                        {" "}
+                        <a href="">{val.data[`${val2}`].total.confirmed}</a>
+                      </td>
+                      <td className="recovered">
+                        {" "}
+                        <a href=""> {val.data[`${val2}`].total.recovered}</a>
+                      </td>
+                      <td className="death">
+                        {" "}
+                        <a href=""> {val.data[`${val2}`].total.deceased}</a>
+                      </td>
+                      <td className="test">
+                        {" "}
+                        <a href=""> {val.data[`${val2}`].total.tested}</a>
+                      </td>
+                      <td className="dose">
+                        {" "}
+                        <a href=""> {val.data[`${val2}`].total.vaccinated1}</a>
+                      </td>
+                      <td className="dose">
+                        {" "}
+                        <a href=""> {val.data[`${val2}`].total.vaccinated2}</a>
+                      </td>
+                    </tr>
+                  </>
+                );
+              });
+            })}
+          </table>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default States;

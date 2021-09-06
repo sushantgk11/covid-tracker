@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './Country.css';
 import confirm_img from './assets/microscope.png';
@@ -136,9 +135,9 @@ const Country = () => {
         <td> <a>{val2.totalConfirmed}</a></td>
         <td id="newcase"> <a>{val2.dailyConfirmed}</a></td>
         <td> <a>{val2.activeCases}</a></td>
-        <td> <a>{val2.totalRecovered}</a></td>
+        <td id="recovered"> <a>{val2.totalRecovered}</a></td>
     
-        <td> <a >{val2.totalDeaths}</a></td>
+        <td id="death"> <a >{val2.totalDeaths}</a></td>
   
         <td id="newdeath"> <a>{val2.dailyDeaths}</a></td>
         

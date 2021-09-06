@@ -93,23 +93,26 @@ table tr td:nth-child(1) a:hover
 {
     color: rgb(37, 37, 82);   
 }
-table tr td:nth-child(3) a
+table tr td.recovered a
 {
-    color: red;
+    color: green;
 }
-table tr td:nth-child(7)
+table tr td.death
+{
+   background-color: red;  
+}
+table tr td.death a
 {
     color: white;
-   background-color: red;  
-   
-   
 }
-table tr td:nth-child(5) a
+table tr td.dose 
 {
-   color: green;
+    background-color: green;
 }
-
-
+table tr td.dose a 
+{
+    color: white;
+}
 .container .row .sec1
 {
     background-color: rgb(126, 19, 19);
